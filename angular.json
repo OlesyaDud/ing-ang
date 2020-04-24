@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "instapostangular"
+    }
+  },
+  "defaultProject": "instapostangular",
+  "cli": {
+    "analytics": false
+  }
 }

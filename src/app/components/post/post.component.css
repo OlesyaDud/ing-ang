@@ -1,0 +1,22 @@
+.post-container {
+    background-color: rgb(231, 237, 240);
+    height: 100%;
+    padding: 1rem;
+}
+
+.photos {
+    background-color: rgb(231, 233, 236);
+    display: inline-block;
+    text-align: center;
+}
+
+.image {
+    height: 250px;
+    width: 250px;
+    box-shadow: 1px 5px 3px 5px rgb(170, 187, 202);
+    margin: 1rem;
+}
+
+.user {
+    color: rgb(51, 80, 122);
+}
