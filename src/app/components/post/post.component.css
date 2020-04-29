@@ -11,8 +11,8 @@
 }
 
 .image {
-    height: 250px;
-    width: 250px;
+    height: 350px;
+    width: 350px;
     box-shadow: 1px 5px 3px 5px rgb(170, 187, 202);
     margin: 1rem;
 }
