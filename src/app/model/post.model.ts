@@ -1,7 +1,11 @@
 export class Post {
-    constructor(
-        public p_id: number,
-        public imageUrl: string,
-        public u_id: number
-    ) {}
+    // constructor(
+    //     public p_id: number,
+    //     public imageUrl: string,
+    //     public u_id: number
+    // ) {}
+
+    public p_id: number;
+    public imageUrl: string;
+    public u_id: number;
 }

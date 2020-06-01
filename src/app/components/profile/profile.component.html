@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-lg-6">
+            <div *ngFor="let user of users">
+                <img src="https://getdrawings.com/free-icon-bw/grey-instagram-icon-20.png" height="40" width="40">
+                <h5>{{ user.u_name }}</h5>
+            </div>
+        </div> -->
+
+        <div class="col-lg-6">
+            <div *ngFor="let user of users">
+                <img src="https://getdrawings.com/free-icon-bw/grey-instagram-icon-20.png" height="40" width="40">
+                <h5>{{ user.u_name }}</h5>
+            </div>
+        </div>
+
+        <!-- <div class="col-lg-6">
+            <div *ngFor="let user of users">
+                <div *ngIf="user.user.id == user.id">
+                    <h3>{{ comments.text }}{{ user.u_name }}</h3>
+                </div>
+            </div>
+    </div> -->
+        <div class="col-lg-6">
+            <div *ngFor="let post of posts">
+                <div class="col-xs-12 text-center">
+                <img src="{{ post.imageUrl }}">
+                </div>
+            </div>
+        </div>
+<!-- ------------------------------------------------ -->
+  
+
+    </div>
+</div>
+
+
+<!-- <div *ngFor="let user of users">
+    <div *ngIf="posts.u_id == user.id">
+      <br><p>
+      &nbsp;&nbsp;&nbsp;
+      <img src="https://getdrawings.com/free-icon-bw/grey-instagram-icon-20.png" height="40" width="40">
+      <strong>&nbsp;&nbsp;&nbsp;{{ user.u_name }}</strong>
+    </p>
+    </div>
+  </div> -->
+

@@ -1,29 +1,8 @@
 <div class="container post-container">
-    <div class="row">
-        <h3 class="mx-auto text-uppercase text-light">InstaPost</h3>
-    </div>
-
-<!-- <div class="main-div">
-  <div class="col-lg-6 photos" *ngFor="let p of posts">
- 
-
-      <a><img src="{{p.imageUrl}}" class="image"  alt=""/></a>
-  
-  
-
-  <div  *ngIf ="!isCollapsed">   
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let c of comments">{{c.text}}</li>
-    </ul>
-  </div>
-             
-
-</div>
-</div> -->
 
 <div>
   <div class="row">
-    <div class="col-lg-12 text-center" *ngFor="let p of posts">
+    <div class="col-lg-3 text-center" *ngFor="let p of posts">
       <a><img src="{{p.imageUrl}}" class="image"  alt=""/></a>
     </div>
 
@@ -34,9 +13,9 @@
   </div>
 </div>
 
-<div>
+<!-- <div>
   <button (click) ="toggleCollapse()">View Comments</button>
 </div>
 
-<app-comment></app-comment>
+<app-comment></app-comment> -->
 </div>

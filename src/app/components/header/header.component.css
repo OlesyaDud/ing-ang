@@ -1,0 +1,23 @@
+.navbar .material-icons {
+    color: rgb(90, 166, 236);
+    border: 1px solid rgb(134, 182, 226);
+}
+
+.navbar {
+    padding-right: 2%; 
+}
+
+h3 {
+    color: white;
+    padding-left: 2%;
+}
+
+.navbar .material-icons:hover,
+.material-icons:active {
+    color: rgb(104, 164, 204);
+    border: 1px solid rgb(76, 145, 235)!important;
+}
+
+nav {
+    background-color: rgb(170, 203, 233);
+}

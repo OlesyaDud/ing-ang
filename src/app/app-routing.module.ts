@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostComponent } from './components/post/post.component';
-import { CommentComponent } from './comment/comment.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
 const routes: Routes = [
   {path: 'post', component: PostComponent},
   {path: 'comment', component: CommentComponent},
-  { path: '', component: CommentComponent },
-  { path: '**', redirectTo: 'post', pathMatch: 'full' }
+  {path: 'profile', component: ProfileComponent},
+  { path: '', component: ProfileComponent },
+  { path: '**', redirectTo: 'profile', pathMatch: 'full' }
   ];
 
 @NgModule({

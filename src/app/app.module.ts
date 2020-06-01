@@ -7,13 +7,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostComponent } from './components/post/post.component';
 import { PostService } from './service/post.service';
-import { CommentComponent } from './comment/comment.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { UserComponent } from './components/user/user.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    CommentComponent
+    CommentComponent,
+    UserComponent,
+    HeaderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

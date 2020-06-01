@@ -3,7 +3,7 @@ import { Post } from 'src/app/model/post.model';
 import { PostService } from 'src/app/service/post.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from 'src/app/model/user.model';
+
 
 
 
@@ -20,20 +20,10 @@ export class PostComponent implements OnInit {
 
   comments: any;
 
-
-  
-
-
   constructor( private postService: PostService,
               private router: Router,
               private http: HttpClient) { 
               }
-
-
-//   ngOnInit() {
-//   this.postService.getPosts().subscribe(posts => {console.log(posts)<-----------
-//   });
-// }
 
   ngOnInit() {
   let resp = this.postService.getPosts();
