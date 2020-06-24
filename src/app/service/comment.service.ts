@@ -17,7 +17,7 @@ export class CommentService {
 
 postCommentUrl = 'http://localhost:8181/comment';
 getCommentsUrl = 'http://localhost:8181/comment';
-deleteCommentUrl ='http://localhost:8181/comment'
+deleteCommentUrl ='http://localhost:8181/comment';
 updateCommentUrl = 'http://localhost:8181/comment';
 
 
@@ -55,24 +55,10 @@ public postComment(comment: Comment): Observable<Comment> {
     return this.http.post<Comment>(this.postCommentUrl, comment, this.headers);
   }
 
-//   public saveComment(comment: Comment): Observable<Comment> {//worked
-//     return this.http.post<Comment>(this.postCommentUrl, JSON.stringify(comment), this.headers);
-//   }
 
 // delete comment
-
-// deleteComment(id: number): Observable<any> {
-//     return this.http.delete(`${this.deleteCommentUrl}/{id}`, this.headers);
-//   }
-
-
-// deleteComment(id: number): Observable<any> {
-//   return this.http.delete(`${this.deleteCommentUrl}/{id}`, this.headers);
-// }
-
 deleteComment(id: number): Observable<Comment> {
-    const url = `${this.deleteCommentUrl}/${id}`;
-    return this.http.delete<Comment>(this.url, this.headers);
+    return this.http.delete<Comment>('http://localhost:8181/comment/' + id, this.headers);
   }
 
 // update

@@ -54,26 +54,27 @@ export class CommentComponent implements OnInit {
 
 
 
-//  deleteThisComment(id: number) {
-
-//   this.commentService.deleteCommentid(this.comments.id)
-//   .subscribe( data => {
-//     this.comments.id =data;
-//   });
-
-// deleteThisComment() {
-
-//   this.commentService.deleteComment(this.comments.id)
-//   .subscribe( data => {
-//     this.comments = data;
-//   });
-deleteThisComment(id:number) {
-  this.commentService.deleteComment(this.comments.id)
-.subscribe( data => {
-  this.comments =data;
-});
-}
+//  deleteThisComment(id: number) {    wooooorks
+//    if(confirm("are  you sure you want to delete " + id + "?")) {
+//      this.http.delete('http://localhost:8181/comment/' + id)
+//      .subscribe(data => {
+//        console.log("deleted");
+//        this.id;
+//      })
+//    }
 //  }
+
+deleteThisComment(id:number) {
+  if(confirm("are  you sure you want to delete this comment? ")) {
+  this.commentService.deleteComment(id) 
+.subscribe( data => {
+  this.toastr.success('Your comment is deleted!');
+  this.id;
+  
+});
+  }
+}
+ 
 
    ngOnInit() {
   //      // Retrieve Comments
