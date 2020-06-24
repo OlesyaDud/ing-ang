@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from 'src/app/model/post.model';
+
 import { User } from 'src/app/model/user.model';
 import { Comment } from 'src/app/model/comment.model';
 import { PostService } from 'src/app/service/post.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Post } from 'src/app/model/post.model';
 
 @Component({
   selector: 'app-profile',
@@ -18,8 +19,9 @@ export class ProfileComponent implements OnInit {
   // comments: Comment;
 
   posts: Post[];
-  users: User[];
-  comments: Comment[];
+  // users: User[];
+  // comments: Comment[];
+
 
 
   viewMore = false;
@@ -32,20 +34,20 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
 
-     // Retrieve Posts
-     this.postService.getPosts().subscribe(data => {
-      this.posts = data;
-    });
+    //  // Retrieve Posts
+    //  this.postService.getPosts().subscribe(data => {
+    //   this.posts = data; //data given to class variable posts
+    // });
 
     // Retrieve Users
-    this.postService.getUsers().subscribe(data => {
-      this.users = data;
-    });
+    // this.postService.getUsers().subscribe(data => {
+    //   this.users = data;
+    // });
 
-    // Retrieve Comments
-    this.postService.getComments().subscribe(data => {
-      this.comments = data;
-    });
+    // // Retrieve Comments
+    // this.postService.getComments().subscribe(data => {
+    //   this.comments = data;
+    // });
   }
 
   viewMoreComments() {

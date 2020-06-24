@@ -1,13 +1,10 @@
 export class Comment {
-    // constructor (
-    //     public comment_id: number,
-    //     public p_id: number,
-    //     public text: string,
-    //     public u_id: number
-    // ) {}
+  id: number;
+  text: string;
+  post_id: number;
+  createdAt: any;
 
-    public comment_id: number;
-    public p_id: number;
-    public text: string;
-    public u_id: number;
+  public constructor(init?: Partial<Comment>) {
+    Object.assign(this, init);
+}
 }

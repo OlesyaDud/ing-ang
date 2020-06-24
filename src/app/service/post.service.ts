@@ -16,7 +16,6 @@ export class PostService {
   private comment: Comment;
 
   constructor(private http: HttpClient) {
-
    }
  
    public getPosts(): Observable<any> {
@@ -30,7 +29,11 @@ export class PostService {
   public getComments(): Observable<any> {
     return this.http.get('/localhost:8081/comment');
   }
+// ----------------------------
 
+// public addUser() {
+//   return this.http.post();
+// }
 
 
 // post--------------------
@@ -41,11 +44,13 @@ export class PostService {
   public getPostById(){
     return this.http.get("http://localhost:8181/post/{pId}");
   }
+
+ 
       
 // user -------------------------
-  public getUser(){
-    return this.http.get("http://localhost:8181/user/{id}");
-  }
+  // public getUser(){
+  //   return this.http.get("http://localhost:8181/user/{id}");
+  // }
 
   // public getUsers(){
   //   return this.http.get("http://localhost:8181/user");

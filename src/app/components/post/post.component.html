@@ -1,21 +1,26 @@
 <div class="container post-container">
-
-<div>
   <div class="row">
-    <div class="col-lg-3 text-center" *ngFor="let p of posts">
-      <a><img src="{{p.imageUrl}}" class="image"  alt=""/></a>
+    <!-- <div class="col-lg-6 text-center">
+      <p>{{posts[3].id}} 
+        {{posts[3].title}}</p>
+    </div> -->
+
+    
+    <div class="col-lg-12">
+    <div class="card" *ngFor="let p of posts">
+       <img src="{{ p.imageUrl }}">
+      <div class="card-body" >
+
+       
+
+        <h5 class="card-title">{{p.title}}</h5>
+        <p class="card-text"></p>
+        <a href="#" class="btn btn-primary">Add a comment</a>
+
+      </div>
     </div>
-
-    <h3>{{user.u_id}}</h3>
-    <ul  *ngIf ="!isCollapsed" class="list-group">
-      <li class="list-group-item" *ngFor="let c of comments">{{c.text}}</li>
-    </ul>
-  </div>
+    </div>
+</div>
 </div>
 
-<!-- <div>
-  <button (click) ="toggleCollapse()">View Comments</button>
-</div>
 
-<app-comment></app-comment> -->
-</div>
