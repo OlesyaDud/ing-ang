@@ -52,8 +52,6 @@ export class CommentComponent implements OnInit {
 
 // delete comment
 
-
-
 //  deleteThisComment(id: number) {    wooooorks
 //    if(confirm("are  you sure you want to delete " + id + "?")) {
 //      this.http.delete('http://localhost:8181/comment/' + id)
@@ -73,6 +71,13 @@ deleteThisComment(id:number) {
   
 });
   }
+}
+
+//  update comment
+updateThisComment() {
+  this.commentService.updateComment(this.comments).subscribe( data => {
+  this.comments =data;
+})
 }
  
 

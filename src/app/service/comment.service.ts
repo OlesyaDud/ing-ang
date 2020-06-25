@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable, of } from 'rxjs';
+import { Subject, Observable, of, pipe } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 import { catchError, map, tap } from 'rxjs/operators'; //to catch errors
@@ -39,11 +39,9 @@ updateCommentUrl = 'http://localhost:8181/comment';
    }
 
 //    get comments
-  public getAllComments(): Observable<Comment[]> {
+   getAllComments(): Observable<Comment[]> {
       return this.http.get<Comment[]>(this.getCommentsUrl)
       .pipe(
-        //   catchError(this.handleError<Comment[]>('getAllComments', []))
-        tap(),
       catchError(this.handleError<Comment[]>('getAllComments', []))
       );
   }
@@ -51,7 +49,7 @@ updateCommentUrl = 'http://localhost:8181/comment';
 
 //   post comment
 
-public postComment(comment: Comment): Observable<Comment> { 
+postComment(comment: Comment): Observable<Comment> { 
     return this.http.post<Comment>(this.postCommentUrl, comment, this.headers);
   }
 
@@ -61,9 +59,12 @@ deleteComment(id: number): Observable<Comment> {
     return this.http.delete<Comment>('http://localhost:8181/comment/' + id, this.headers);
   }
 
-// update
-// updateComment(comment:Comment): Observable<Comment> {
-//     return this.http.put<Comment>(this.updateCommentUrl, comment, this.headers);
-// }
+//update
+updateComment(comment:Comment): Observable<Comment> {
+    return this.http.put<Comment>(this.updateCommentUrl, comment, this.headers)
+    .pipe(
+      catchError(this.handleError('updateComment', comment))
+    );
+}
 
 }

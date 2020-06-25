@@ -4,15 +4,24 @@ import { PostComponent } from './components/post/post.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UserComponent } from './components/user/user.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 
 const routes: Routes = [
-  {path: 'post', component: PostComponent},
-  {path: 'comment', component: CommentComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'user', component: UserComponent},
+  {path: 'profile', component: ProfileComponent,
+  children: [
+    {path: 'user', component: UserComponent}, 
+    {path: 'post',  component: PostComponent},
+    {path: 'comment', component: CommentComponent}
+  ]},
+  
   { path: '', component: ProfileComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: '**', redirectTo: 'profile', pathMatch: 'full' }
   ];
 

@@ -1,6 +1,11 @@
 <nav class="navbar">
     <h3>InstaPost</h3>
-    <a class="navbar-brand" routerLink ="/profile">
+    <a class="navbar-brand" routerLink ="/profile"></a>
         <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
-    </a>
+  
+            <ul>
+              <li><a (click)="toRegister()" routerLinkActive="active">Register</a></li>
+              <li><a (click)="toLogin()" routerLinkActive="active">Login</a></li>
+              <li id="logout"><a (click)="logout()" class="nav-link">Log Out</a></li>
+            </ul>
   </nav>
