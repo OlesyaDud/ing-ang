@@ -8,19 +8,35 @@
             <div class="form-group text-center" >
               <label>Comments</label>
               <input type="text" class="form-control" formControlName="text" placeholder="Enter comment">
-              <button type="submit"  class="btn btn-primary">Add</button>
+              <button type="submit"  class="btn btn-info">Add</button>
             </div>     
           </form>
           
-            <div class="comment-section" *ngFor="let c of comment">
+            <!-- <div class="comment-section" *ngFor="let c of comment">
                 <ul >
                     <li class="commentItself">
-                        {{c.text}}
+                        <span class="commentContent">{{c.text}}</span>
                         <span class="createdComment">{{c.createdAt | date}}</span>
                         <span class="deleteComment" ><a class="btn btn-primary" role="button" (click)="deleteThisComment(c.id)">X</a></span>
                     </li>
                 </ul>
-            </div>
+            </div> -->
+
+            <table class="table table-responsive-lg" *ngFor="let c of comment">                
+                <tbody>
+                  <tr>
+                    <td class="text-center col">
+                        <span class="commentContent">{{c.text}}</span></td>
+                    <td>
+                        <span class="ml-5">Posted: {{c.createdAt | date}}</span>
+                        <span class="deleteComment ml-5" ><a class="btn text-light btn-info" role="button" (click)="deleteThisComment(c.id)">Delete</a></span>
+                    </td>
+                    <!-- <td>
+                        <span class="deleteComment ml-5" ><a class="btn text-light btn-info" role="button" (click)="deleteThisComment(c.id)">Delete</a></span>
+                    </td> -->
+                  </tr>
+                </tbody>
+              </table>
 
     </div>
 </div>

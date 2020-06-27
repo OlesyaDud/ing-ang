@@ -43,7 +43,7 @@ export class CommentComponent implements OnInit {
     // adds comments
     addComment() {
       this.commentService.postComment(this.AddCommentFormGroup.value).subscribe(
-        async data => {
+         data => {
           this.toastr.success('success!');
           this.commentService.postComment(this.comments);
         }
@@ -68,18 +68,9 @@ deleteThisComment(id:number) {
 .subscribe( data => {
   this.toastr.success('Your comment is deleted!');
   this.id;
-  
 });
   }
 }
-
-//  update comment
-updateThisComment() {
-  this.commentService.updateComment(this.comments).subscribe( data => {
-  this.comments =data;
-})
-}
- 
 
    ngOnInit() {
   //      // Retrieve Comments
@@ -91,15 +82,5 @@ updateThisComment() {
     }, error => {
         console.log('Error ', error);
       }
-    )
-  
-// update
-
-// this.commentService.updateComment(this.comments).subscribe( data => {
-//   this.comments =data;
-// })
-
-// ngOnInit ends here
-  }
-
+    )}
   }

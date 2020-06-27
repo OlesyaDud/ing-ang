@@ -61,4 +61,15 @@ export class UserService {
     sessionStorage.setItem('currentUser', JSON.stringify(user));
   }
 
+  // --------------------------------------------
+
+  // user -------------------------
+  // public getUser(){
+  //   return this.http.get("http://localhost:8181/user/{id}");
+  // }
+
+  // public getUsers(){
+  //   return this.http.get("http://localhost:8181/user");
+  // }
+
  }

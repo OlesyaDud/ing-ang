@@ -11,60 +11,37 @@ export class PostService {
 
   private posts: Post;
 
-  private user: User;
 
-  private comment: Comment;
+  headers={
+    headers : new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private http: HttpClient) {
    }
+
+
  
-   public getPosts(): Observable<any> {
-    return this.http.get("http://localhost:8181/post");
+   public getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>("http://localhost:8181/post");
   }
-
-  public getUsers(): Observable<any> {
-    return this.http.get("http://localhost:8181/user");
-  }
-
-  public getComments(): Observable<any> {
-    return this.http.get('/localhost:8081/comment');
-  }
-// ----------------------------
-
-// public addUser() {
-//   return this.http.post();
-// }
-
-
-// post--------------------
-  // public getPosts(){
-  //   return this.http.get("http://localhost:8181/post");
-  // }
 
   public getPostById(){
     return this.http.get("http://localhost:8181/post/{pId}");
   }
 
- 
-      
-// user -------------------------
-  // public getUser(){
-  //   return this.http.get("http://localhost:8181/user/{id}");
-  // }
 
-  // public getUsers(){
-  //   return this.http.get("http://localhost:8181/user");
-  // }
-
-
-  public getComment() {
-    return this.http.get('http://localhost:8181/comment');
+// post
+  public createPost(post: Post): Observable<Post>{
+    return this.http.post<Post>('http://localhost:8181/post', post, this.headers);
   }
 
-  // public getPost(posts: Post): Observable<Post[]>{
-  //   let loginT = new LoginTemplate(user.email, user.password);
-  //   return this.http.post<Property[]>(this.getUserPropertiesUrl,  JSON.stringify(loginT), this.headers);
-  // }
-      
+  // delete 
+  public deletePost(id: number): Observable<Post> {
+  return this.http.delete<Post>('http://localhost:8181/post/' + id, this.headers);
+}
+
+
 }
 
